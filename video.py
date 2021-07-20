@@ -1,16 +1,16 @@
 import cv2
 
-# Load the cascade
+# Load the cascade file
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # To capture video from webcam. 
-cap = cv2.VideoCapture(0)
+uvcap = cv2.VideoCapture(0)
 # To use a video file as input 
 # cap = cv2.VideoCapture('filename.mp4')
 
 while True:
     # Read the frame
-    _, img = cap.read()
+    _, img = uvcap.read()
     # Convert to grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # Detect the faces
@@ -25,4 +25,4 @@ while True:
     if k==27:
         break
 # Release the VideoCapture object
-cap.release()
+uvcap.release()
